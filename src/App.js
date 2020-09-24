@@ -3,21 +3,20 @@ import "./App.css";
 import Booking from "./Components/Booking/Booking";
 import CreateAccount from "./Components/CreateAccount/CreateAccount";
 import Header from "./Components/Header/Header";
-import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Search from "./Components/Search/Search";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./Components/Home/Home";
 
 function App() {
   return (
     <div>
       <Router>
-        <Switch>
-          <Header></Header>
+        <Header></Header>
 
-          <Route path="/home">
-            <Home></Home>
-          </Route>
+        <Switch>
+          <Route exact path="/" component={Home} />
+
           <Route path="/booking">
             <Booking></Booking>
           </Route>
