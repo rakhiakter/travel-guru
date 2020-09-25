@@ -8,7 +8,7 @@ const Destination = () => {
       <Container>
         <CardDeck>
           <Card>
-            <Link to="/booking">
+            <Link to="/booking/sajek">
               <Card.Img
                 className="hr"
                 variant="top"
@@ -19,7 +19,7 @@ const Destination = () => {
           </Card>
 
           <Card>
-            <Link to="/booking">
+            <Link to="/booking/sreemongol">
               <Card.Img
                 className="hr"
                 variant="top"
@@ -30,7 +30,7 @@ const Destination = () => {
           </Card>
 
           <Card>
-            <Link to="/booking">
+            <Link to="/booking/sundorbon">
               <Card.Img
                 className="hr"
                 variant="top"

@@ -14,10 +14,10 @@ const Details = () => {
           feet (450 m) above sea level.[2] Sajek valley is known as the Queen of
           Hills & Roof of Rangamati.
         </p>
-        <Link to="/booking">
+        <Link to="/booking/sajek">
           <Button variant="warning">Booking</Button>{" "}
         </Link>
-        <h1> Sreemangal, The Tea Capital of Bangladesh</h1>
+        {/* <h1> Sreemangal, The Tea Capital of Bangladesh</h1>
         <p>
           Sreemangal is a hilly area covered with tea estates. There are 47 tea
           gardens in Sreemangal. A large portion of world’s highest quality tea
@@ -33,7 +33,7 @@ const Details = () => {
           faunal diversity plays an important role in mangrove ecosystem. The
           Sundarbans is the magnificent rich wildlife conservation including
           Royal Bengal Tiger habitation area of local and global valued.
-        </p>
+        </p> */}
       </Container>
     </div>
   );
