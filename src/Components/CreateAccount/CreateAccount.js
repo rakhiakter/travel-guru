@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { UserContext } from "../../App";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import firebaseConfig from "../../../src/firebase.config";
-
+import "./CreateAccount.css";
 const CreateAccount = () => {
   const history = useHistory();
   const location = useLocation();
@@ -149,8 +149,8 @@ const CreateAccount = () => {
   };
 
   return (
-    <Container>
-      <Form id="creatForm">
+    <Container id="createForm">
+      <Form>
         <h4>Create Account</h4>
         <Form.Group controlId="formFirstName">
           <Form.Control
@@ -198,8 +198,16 @@ const CreateAccount = () => {
           Create an account
         </Button>
       </Form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
+      <p style={{ display: "flex" }}>
+        Already have an account?{" "}
+        <Link
+          to="/login"
+          style={{
+            paddingLeft: "300px",
+          }}
+        >
+          Login
+        </Link>
       </p>
       <Button
         variant="primary"

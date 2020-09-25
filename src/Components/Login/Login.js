@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { UserContext } from "../../App";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import firebaseConfig from "../../../src/firebase.config";
-
+import "./Login.css";
 const Login = () => {
   const history = useHistory();
   const location = useLocation();
@@ -143,8 +143,8 @@ const Login = () => {
     e.preventDefault();
   };
   return (
-    <Container>
-      <Form id="login-form" onClick={handleSubmit}>
+    <Container id="login-form">
+      <Form onClick={handleSubmit}>
         <h4>Login</h4>
         <Form.Group controlId="email">
           <Form.Label>UserName or Email</Form.Label>
@@ -166,9 +166,16 @@ const Login = () => {
             onBlur={handleBlur}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">
+        <Form.Group controlId="formBasicCheckbox" style={{ display: "flex" }}>
           <Form.Check type="checkbox" label="Remember Me" />
-          <Link to="/create-account">Create Account</Link>
+          <Link
+            to="/create-account"
+            style={{
+              paddingLeft: "300px",
+            }}
+          >
+            Create Account
+          </Link>
         </Form.Group>
         <Button type="submit">Login</Button>
         <br />
