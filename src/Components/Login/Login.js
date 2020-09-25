@@ -144,7 +144,7 @@ const Login = () => {
   };
   return (
     <Container>
-      <Form id="form" onClick={handleSubmit}>
+      <Form id="login-form" onClick={handleSubmit}>
         <h4>Login</h4>
         <Form.Group controlId="email">
           <Form.Label>UserName or Email</Form.Label>
