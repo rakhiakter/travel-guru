@@ -7,6 +7,7 @@ import {
   Container,
   Button,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
 import "./Header.css";
 const Header = () => {
@@ -31,11 +32,21 @@ const Header = () => {
           </Form>
 
           <Nav className="ml-auto">
-            <Nav.Link href="#home">News</Nav.Link>
-            <Nav.Link href="#features">Destination</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
-            <Nav.Link href="#pricing">Contact</Nav.Link>
-            <Button variant="warning">Login</Button>
+            <Link className="nav-link" to="/news">
+              News
+            </Link>
+            <Link className="nav-link" to="destination">
+              Destination
+            </Link>
+            <Link className="nav-link" to="/blog">
+              Blog
+            </Link>
+            <Link className="nav-link" to="#pricing">
+              Contact
+            </Link>
+            <Link className="nav-link" to="/login">
+              <Button variant="warning">Login</Button>
+            </Link>
           </Nav>
         </Navbar>
       </Container>

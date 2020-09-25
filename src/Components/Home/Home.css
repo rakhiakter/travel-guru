@@ -1,3 +1,6 @@
-#home {
-    background-image: url("../../Images/image/rectangle 1.png")
+/* #home {} */
+
+html {
+    background-image: url("../../Images/image/rectangle 1.png");
+    background-size: cover;
 }

@@ -1,0 +1,13 @@
+.bottom {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    text-align: center;
+    color: white;
+    font-family: serif;
+    font-size: 30px;
+}
+
+.hr:hover {
+    border: 2px solid yellow;
+}
