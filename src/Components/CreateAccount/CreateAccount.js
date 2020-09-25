@@ -7,11 +7,12 @@ import { useContext } from "react";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router-dom";
 import firebaseConfig from "../../../src/firebase.config";
-// if (firebase.app.length === 0) {
-firebase.initializeApp(firebaseConfig);
-// }
 
 const CreateAccount = () => {
+  const history = useHistory();
+  const location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
+
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
     isSignIn: false,
@@ -20,14 +21,14 @@ const CreateAccount = () => {
     password: "",
     photo: "",
   });
-
+  if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+  }
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const history = useHistory();
-  const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
+
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const fbProvider = new firebase.auth.FacebookAuthProvider();
-  const handleSignIn = () => {
+  const handleGoogleSignIn = () => {
     firebase
       .auth()
       .signInWithPopup(googleProvider)
@@ -40,6 +41,8 @@ const CreateAccount = () => {
           photo: photoURL,
         };
         setUser(signInUser);
+        setLoggedInUser(signInUser);
+        history.replace(from);
         console.log(displayName, email, photoURL);
       })
       .catch((err) => {
@@ -73,6 +76,10 @@ const CreateAccount = () => {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        user.success = true;
+        setUser(user);
+        setLoggedInUser(user);
+        history.replace(from);
         // ...
       })
       .catch(function (error) {
@@ -195,18 +202,33 @@ const CreateAccount = () => {
           />
         </Form.Group>
 
-        <Button variant="warning" size="lg" type="submit">
+        <Button
+          variant="warning"
+          size="lg"
+          type="submit"
+          onClick={handleSubmit}
+        >
           Create an account
         </Button>
         <p>
           Already have an account? <a href="#">Login</a>
         </p>
       </Form>
-      <Button variant="primary" size="lg" type="submit">
+      <Button
+        variant="primary"
+        size="lg"
+        type="submit"
+        onClick={handleFbSignIn}
+      >
         Login with Facebook
       </Button>
       <br />
-      <Button variant="primary" size="lg" type="submit">
+      <Button
+        variant="primary"
+        size="lg"
+        type="submit"
+        onClick={handleGoogleSignIn}
+      >
         Login with Google
       </Button>
     </Container>

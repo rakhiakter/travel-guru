@@ -7,7 +7,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <div id="home">
-      <h1>This is home</h1>
       <Container>
         <Row>
           <Col sm={3}>

@@ -12,7 +12,6 @@ const Booking = () => {
             <h1>details</h1>
           </Col>
           <Col xs={6}>
-            <h1>this is card</h1>
             <BookForm></BookForm>
           </Col>
         </Row>

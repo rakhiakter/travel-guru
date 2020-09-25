@@ -27,9 +27,6 @@ const Login = () => {
           Login
         </Button>
         <br />
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
       </Form>
     </Container>
   );
