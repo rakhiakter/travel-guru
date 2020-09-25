@@ -9,13 +9,9 @@ const Search = () => {
       <Container>
         <Row>
           <Col xs={6}>
-            <h1>half here</h1>
-            <Room></Room>
-            <Room></Room>
             <Room></Room>
           </Col>
           <Col xs={6}>
-            <h1>half there</h1>
             <Map></Map>
           </Col>
         </Row>
