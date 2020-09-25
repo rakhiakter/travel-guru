@@ -5,7 +5,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import { useContext } from "react";
 import { UserContext } from "../../App";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import firebaseConfig from "../../../src/firebase.config";
 
 const CreateAccount = () => {
@@ -104,7 +104,7 @@ const CreateAccount = () => {
       isFieldValid = e.target.value.trim().length > 0;
     }
 
-    if (e.target.id === "formBasicEmail") {
+    if (e.target.id === "email") {
       isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
     }
     if (e.target.id === "password") {
@@ -120,22 +120,7 @@ const CreateAccount = () => {
     }
   };
   const handleSubmit = (e) => {
-    // if (user.email && user.password) {
-    //   firebase
-    //     .auth()
-    //     .createUserWithEmailAndPassword(user.email, user.password)
-    //     .then((res) => {
-    //       const newUserInfo = { ...user };
-    //       newUserInfo.error = "";
-    //       alert("user created");
-    //     })
-    //     .catch((error) => {
-    //       const newUserInfo = { ...user };
-    //       newUserInfo.error = error.message;
-    //       setUser(newUserInfo);
-    //     });
-    // }
-
+    console.log("123");
     if (user.email && user.password) {
       firebase
         .auth()
@@ -148,6 +133,7 @@ const CreateAccount = () => {
           setLoggedInUser(newUserInfo);
           console.log(newUserInfo);
           history.replace(from);
+          console.log("136");
         })
         .catch((error) => {
           const newUserInfo = { ...user };
@@ -155,6 +141,7 @@ const CreateAccount = () => {
           newUserInfo.success = false;
           setUser(newUserInfo);
           //   updateUserName(user.name);
+          console.log("144");
         });
     }
 
@@ -163,20 +150,22 @@ const CreateAccount = () => {
 
   return (
     <Container>
-      <Form id="form" onClick={handleSubmit}>
+      <Form id="creatForm">
         <h4>Create Account</h4>
         <Form.Group controlId="formFirstName">
           <Form.Control
-            type="email"
+            type="text"
             placeholder="First Name"
             onBlur={handleBlur}
+            required
           />
         </Form.Group>
         <Form.Group controlId="formLastName">
           <Form.Control
-            type="email"
+            type="text"
             placeholder="Last Name"
             onBlur={handleBlur}
+            required
           />
         </Form.Group>
         <Form.Group controlId="email">
@@ -184,6 +173,7 @@ const CreateAccount = () => {
             type="email"
             placeholder="Username or email"
             onBlur={handleBlur}
+            required
           />
         </Form.Group>
 
@@ -192,6 +182,7 @@ const CreateAccount = () => {
             type="password"
             placeholder="Password"
             onBlur={handleBlur}
+            required
           />
         </Form.Group>
         <Form.Group controlId="formBasicPasswordConfirm">
@@ -199,21 +190,17 @@ const CreateAccount = () => {
             type="password"
             placeholder="Confirm Password"
             onBlur={handleBlur}
+            required
           />
         </Form.Group>
 
-        <Button
-          variant="warning"
-          size="lg"
-          type="submit"
-          onClick={handleSubmit}
-        >
+        <Button type="button" onClick={handleSubmit}>
           Create an account
         </Button>
-        <p>
-          Already have an account? <a href="#">Login</a>
-        </p>
       </Form>
+      <p>
+        Already have an account? <Link to="/login">Login</Link>
+      </p>
       <Button
         variant="primary"
         size="lg"

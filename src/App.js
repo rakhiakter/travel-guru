@@ -7,6 +7,7 @@ import Login from "./Components/Login/Login";
 import Search from "./Components/Search/Search";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 export const UserContext = createContext();
 
 function App() {
@@ -28,9 +29,9 @@ function App() {
           <Route path="/create-account">
             <CreateAccount></CreateAccount>
           </Route>
-          <Route path="/search">
+          <PrivateRoute path="/search">
             <Search></Search>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

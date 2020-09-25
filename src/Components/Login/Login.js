@@ -7,7 +7,7 @@ import { useState } from "react";
 import "firebase/auth";
 import { useContext } from "react";
 import { UserContext } from "../../App";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import firebaseConfig from "../../../src/firebase.config";
 
 const Login = () => {
@@ -126,7 +126,9 @@ const Login = () => {
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
           console.log(newUserInfo);
-          history.replace(from);
+          if (res.success === true) {
+            history.replace(from);
+          }
         })
         .catch((error) => {
           const newUserInfo = { ...user };
@@ -166,7 +168,7 @@ const Login = () => {
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Remember Me" />
-          <a href="#">Forgot Password</a>
+          <Link to="/create-account">Create Account</Link>
         </Form.Group>
         <Button type="submit">Login</Button>
         <br />
