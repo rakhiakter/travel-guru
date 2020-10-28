@@ -1,4 +1,7 @@
 # Travel Guru
+# OverView
+Travel Guru is a user friendly single-page application.
+
 ## Features
 1. Travel Guru is a user friendly online booking website.
 2. Stunning Visual content as an independent Hotel or Resort.
@@ -18,6 +21,15 @@ https://travel-guru-dcd6f.web.app
 # Resume
 
 [https://drive.google.com/file/d/1r0AJmoRTKkRU9aZjMwurN2SfN1cHxCyP/view?usp=sharing](https://drive.google.com/file/d/1r0AJmoRTKkRU9aZjMwurN2SfN1cHxCyP/view?usp=sharing)
+
+# Packages
+1. bootstrap
+2. firebase
+3. google-map-react
+4. react
+5. react-bootstrap
+6. react-dom
+7. react-router-dom
 
 
 # ScreenShots
