@@ -20,7 +20,7 @@ https://travel-guru-dcd6f.web.app
 # ScreenShots
 ![Home](home.png)
 ![Booking](booking.png)
-![Map](map.png)
+![Map](map.png )
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
