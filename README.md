@@ -1,3 +1,28 @@
+# Travel Guru
+## Features
+1. Travel Guru is a user friendly online booking website.
+2. Stunning Visual content as an independent Hotel or Resort.
+3. User easily can Book their desireable room.
+4. User can log with Email, Facebook or Google account.
+5. Also user can select their destination and duration time.
+6. In this website user can know about all details of the place clicked by the picture.
+7. User also use a map in this site.
+# Technology
+React, React-router-dom,JavaScript, CSS3, HTML5, Node.js, Firebase, React-bootstrap etc.
+# Tools
+Git, Netlify, Figma, VS Code, Chrome Dev Tool.
+
+# LiveSite Link
+https://travel-guru-dcd6f.web.app
+
+# Resume
+
+# ScreenShots
+![Home](home.png)
+![Booking](booking.png)
+![Map](map.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
